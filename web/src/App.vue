@@ -80,7 +80,7 @@ export default {
           })
           this.messages.push({
             isSentByUser: false,
-            content: `My database is added a document`
+            content: `My database is updated.`
           })
         } catch(err) {
           console.log(err);
