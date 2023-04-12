@@ -1,1 +1,0 @@
-Bulma is a CSS library. This means it provides CSS classes to help you style your HTML code.To use Bulma, you can either use the pre-compiled .css file or install the .sass files so you can customize it to your needs.

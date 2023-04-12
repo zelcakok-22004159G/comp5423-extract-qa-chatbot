@@ -78,7 +78,6 @@ def main():
 def answer():
     args = request.args
     q = args.get("q")
-    t = args.get("t")
     if not q:
         return jsonify(answer="")
     answer = question_answer(q, " ".join(memory))
