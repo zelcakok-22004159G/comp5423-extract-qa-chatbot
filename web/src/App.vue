@@ -49,9 +49,10 @@ export default {
       })
       try {
         const { data } = await axios.get(`${ENDPOINT}/answer?q=${question}`);
+        const { answer } = data
         this.messages.push({
           isSentByUser: false,
-          content: data.answer
+          content: answer
         })
       } catch(err) {
         this.messages.push({
@@ -87,7 +88,7 @@ export default {
           this.messages.push({
             isSentByUser: false,
             content: "I can't update my database, please check."
-          })          
+          })
         }
       }
       reader.onerror = () => {
@@ -98,7 +99,7 @@ export default {
     this.$refs.fileInput.addEventListener("change", handleFiles, false);
     this.$refs.input.addEventListener("keypress", (event) => {
       // If the user presses the "Enter" key on the keyboard
-      if (event.key === "Enter") {        
+      if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
