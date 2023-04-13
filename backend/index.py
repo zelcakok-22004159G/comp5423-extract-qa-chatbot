@@ -16,12 +16,11 @@ def system_init():
         os.mkdir("library")
 
     # Load docs to memory
+    global MEMORY
     for book_name in os.listdir("library"):
         with open(f"library/{book_name}", "r") as f:
-            [content] = f.readlines()
-            global MEMORY
-            MEMORY += content
-    
+            MEMORY += f.read()
+            
 # Initialize Flask
 app = Flask(__name__)
 CORS(app)

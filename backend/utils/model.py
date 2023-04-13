@@ -1,10 +1,10 @@
 from transformers import BertTokenizer
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, BertForQuestionAnswering
 import torch
 
 # Prepare the model
 model_name = "zelcakok/bert-base-squad2-uncased"
-model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+model = BertForQuestionAnswering.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 # Code example: https://towardsdatascience.com/question-answering-with-a-fine-tuned-bert-bc4dafd45626
@@ -13,7 +13,7 @@ def question_answer(question, context):
     input_ids = tokenizer.encode(
         question, 
         context, 
-        add_special_tokens=True, 
+        # add_special_tokens=True, 
         max_length=512, 
         truncation=True,
         padding="max_length",
@@ -37,7 +37,7 @@ def question_answer(question, context):
                 answer += tokens[i][2:]
             else:
                 answer += " " + tokens[i]
-    if answer.startswith("[CLS]"):
+    if answer_end < answer_start or answer.startswith("[CLS]"):
         answer = "I don't know the answer"
     return answer.capitalize()
 
