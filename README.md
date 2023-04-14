@@ -7,6 +7,9 @@
 |Wong Ho Wai|2014591G|
 |Kok Tsz Ho Zelca|22004159G|
 
+## Project Repository
+- Please visit https://github.com/zelcakok-22004159G/comp5423-extract-qa-chatbot for viewing the readme.
+
 ## Project Structure
 |Folder Name|Description|
 |-----------|-----------|
