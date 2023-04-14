@@ -40,8 +40,7 @@
 |training-local.py|The training file for debugging (CPU, Batch size = 1, Epoch = 1)|
 |evaluate-local.py|The evaluating file for debugging|
 |training-on-google-colab.ipynb|The Jupyter notebook to train the QA model|
-|evaluate-on-google-colab.ipynb|The Jupyter notebook to evaluate the QA 
-model|
+|evaluate-on-google-colab.ipynb|The Jupyter notebook to evaluate the QA model|
 |requirements.txt|Includes the dependencies|
 
 ### Start training and evaluating locally
