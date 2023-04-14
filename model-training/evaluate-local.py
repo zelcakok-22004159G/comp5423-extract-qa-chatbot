@@ -16,10 +16,6 @@ from transformers.data.metrics.squad_metrics import (
 from transformers.data.processors.squad import SquadResult, SquadV2Processor
 
 def wrapper():
-    tmodel_name = "zelcakok/bert-base-squad2-uncased"
-    AutoModelForQuestionAnswering.from_pretrained(tmodel_name).save_pretrained(f"checkpoints/{tmodel_name}")
-    AutoTokenizer.from_pretrained(tmodel_name).save_pretrained(f"checkpoints/{tmodel_name}")
-
     # Config
     device = "cpu"
     batch_size = 1
@@ -30,7 +26,6 @@ def wrapper():
 
     model_output_folder = "checkpoints"
     model_output_name = "bert-base-squad2-uncased-epoch-0"
-    squad_data_folder = "data/squad"
 
 
     model_folder = model_output_folder
