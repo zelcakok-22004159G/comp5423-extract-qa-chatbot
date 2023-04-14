@@ -4,7 +4,7 @@
 |Student Name|Student Number|
 |------------|--------------|
 |Chan Tsz Kin|22013718G|
-|Wong Ho Wai|2014591G|
+|Wong Ho Wai|22014591G|
 |Kok Tsz Ho Zelca|22004159G|
 
 ## Project Repository
