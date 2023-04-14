@@ -1,3 +1,7 @@
+'''
+    Filename: evaluate-local.py
+    Usage: Debug the evaluate process
+'''
 # -*- coding: utf-8 -*-
 import os
 import shutil

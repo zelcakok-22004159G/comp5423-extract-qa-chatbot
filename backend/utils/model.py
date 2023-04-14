@@ -1,3 +1,7 @@
+'''
+    Filename: utils/model.py
+    Usage: group the model related functions.
+'''
 from transformers import BertTokenizer
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, BertForQuestionAnswering
 import torch
@@ -13,7 +17,6 @@ def question_answer(question, context):
     input_ids = tokenizer.encode(
         question, 
         context, 
-        # add_special_tokens=True, 
         max_length=512, 
         truncation=True,
         padding="max_length",
@@ -30,6 +33,7 @@ def question_answer(question, context):
     answer_start = torch.argmax(output.start_logits)
     answer_end = torch.argmax(output.end_logits)
     answer = tokens[answer_start]
+    # The answer is found
     if answer_end >= answer_start:
         answer = tokens[answer_start]
         for i in range(answer_start+1, answer_end+1):
@@ -37,6 +41,7 @@ def question_answer(question, context):
                 answer += tokens[i][2:]
             else:
                 answer += " " + tokens[i]
+    # The answer isn't found
     if answer_end < answer_start or answer.startswith("[CLS]"):
         answer = "I don't know the answer"
     return answer.capitalize()
