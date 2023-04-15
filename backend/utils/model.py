@@ -17,10 +17,8 @@ def question_answer(question, context):
     input_ids = tokenizer.encode(
         question, 
         context, 
-        add_special_tokens=True,
         max_length=512, 
         truncation=True,
-        padding='longest',
     )
     tokens = tokenizer.convert_ids_to_tokens(input_ids)
     sep_idx = input_ids.index(tokenizer.sep_token_id)
