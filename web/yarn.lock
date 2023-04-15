@@ -1365,7 +1365,7 @@
   dependencies:
     semver "^7.3.8"
 
-"@volar/vue-language-plugin-pug@^1.2.0":
+"@volar/vue-language-plugin-pug@latest":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@volar/vue-language-plugin-pug/-/vue-language-plugin-pug-1.2.0.tgz#d57cb98bbc342e5a36ccb1733102943c65ff6b13"
   integrity sha512-Mt8XMBGO0FHfnPFKLEeVgWkPmZ7LOqtbKddy1jhkAKqdEgcqGO5Bo/RdpLdqnYgUlPUdn/0XNDK09fsNygOtsg==

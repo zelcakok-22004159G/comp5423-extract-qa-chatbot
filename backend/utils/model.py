@@ -17,9 +17,10 @@ def question_answer(question, context):
     input_ids = tokenizer.encode(
         question, 
         context, 
+        add_special_tokens=True,
         max_length=512, 
         truncation=True,
-        padding="max_length",
+        padding='longest',
     )
     tokens = tokenizer.convert_ids_to_tokens(input_ids)
     sep_idx = input_ids.index(tokenizer.sep_token_id)
@@ -32,7 +33,6 @@ def question_answer(question, context):
     output = model(torch.tensor([input_ids]), token_type_ids=torch.tensor([segment_ids]))
     answer_start = torch.argmax(output.start_logits)
     answer_end = torch.argmax(output.end_logits)
-    answer = tokens[answer_start]
     # The answer is found
     if answer_end >= answer_start:
         answer = tokens[answer_start]
