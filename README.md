@@ -30,7 +30,7 @@
 |Variable Name|Value|
 |-------------|-----|
 |Epoch|2|
-|Batch size|24|
+|Batch size|32|
 |Learning rate|3e-5|
 
 ## Training Model
